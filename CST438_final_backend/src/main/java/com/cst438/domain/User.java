@@ -1,10 +1,10 @@
 package com.cst438.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 
 @Entity
-@Table(name = "users")
+@Table(name = "user_table")
 public class User {
 
     @Id
