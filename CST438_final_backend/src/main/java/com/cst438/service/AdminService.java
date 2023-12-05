@@ -17,7 +17,7 @@ public class AdminService {
     private AttemptRepository attemptRepository;
 
     public void createUser(AccountCredentialsDTO credentials) {
-        // Logic to create and save a new user
+        // TODO Logic to create and save a new user
     }
 
     public List<AttemptDTO> getAllAttempts() {
@@ -30,7 +30,7 @@ public class AdminService {
         return new AttemptDTO(
                 attempt.getId(),
                 attempt.getUser().getId(),
-                attempt.getFlag(), // This is assuming the flag attribute is a String that can work as an ID
+                attempt.getFlag(), 
                 attempt.getGuessedCountry(),
                 attempt.isCorrect()
         );

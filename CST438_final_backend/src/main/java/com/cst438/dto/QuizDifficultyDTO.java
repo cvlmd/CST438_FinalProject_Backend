@@ -4,7 +4,7 @@ package com.cst438.dto;
 
 public class QuizDifficultyDTO {
 
-    private String level; // Admin, User, etc.
+    private String level; 
 
 	public String getLevel() {
 		return level;

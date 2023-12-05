@@ -4,7 +4,7 @@ package com.cst438.dto;
 
 public class AttemptDTO {
 
-    public AttemptDTO(Long attemptId, Long userId, String flagId, String countryGuessed, boolean isCorrect) {
+    public AttemptDTO(String attemptId, String userId, String flagId, String countryGuessed, boolean isCorrect) {
 		super();
 		this.attemptId = attemptId;
 		this.userId = userId;
@@ -12,21 +12,21 @@ public class AttemptDTO {
 		this.countryGuessed = countryGuessed;
 		this.isCorrect = isCorrect;
 	}
-	private Long attemptId;
-    private Long userId;
+	private String attemptId;
+    private String userId;
     private String flagId;
     private String countryGuessed;
     private boolean isCorrect;
-	public Long getAttemptId() {
+	public String getAttemptId() {
 		return attemptId;
 	}
-	public void setAttemptId(Long attemptId) {
+	public void setAttemptId(String attemptId) {
 		this.attemptId = attemptId;
 	}
-	public Long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(Long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	public String getFlagId() {

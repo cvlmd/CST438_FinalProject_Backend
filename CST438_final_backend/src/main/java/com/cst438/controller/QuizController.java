@@ -1,34 +1,35 @@
 package com.cst438.controller;
 
+import com.cst438.domain.QuizFlag;
+import com.cst438.dto.QuizResponseDTO;
+import com.cst438.dto.ScoreHistoryDTO;
+import com.cst438.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import com.cst438.dto.QuizDifficultyDTO;
-import com.cst438.service.QuizService;
 
 @RestController
 @RequestMapping("/quiz")
 public class QuizController {
 
-    @Autowired
-    private QuizService quizService;
+    private final QuizService quizService;
 
-    @PostMapping("/start")
-    public ResponseEntity<?> startQuiz(@RequestBody QuizDifficultyDTO difficulty) {
-        String sessionId = quizService.startQuiz(difficulty.getLevel());
-        return ResponseEntity.ok(sessionId);
+    @Autowired
+    public QuizController(QuizService quizService) {
+        this.quizService = quizService;
     }
 
-    @GetMapping("/next-flag")
-    public ResponseEntity<?> getNextFlag(@RequestParam String sessionId) {
-        String flag = quizService.getNextFlag(sessionId);
+    @GetMapping("/flag")
+    public ResponseEntity<QuizFlag> getRandomFlag() {
+        QuizFlag flag = quizService.getNextFlag();
         return ResponseEntity.ok(flag);
     }
 
-    @PostMapping("/submit-answer")
-    public ResponseEntity<?> submitAnswer(@RequestParam String sessionId, @RequestParam String answer) {
-        boolean isCorrect = quizService.submitAnswer(sessionId, answer);
-        return ResponseEntity.ok(isCorrect);
+    @PostMapping("/guess")
+    public ResponseEntity<String> submitGuess(@RequestBody ScoreHistoryDTO quizResponse) {
+        String message = quizService.checkAnswer(quizResponse.getAttemptId(), quizResponse.getCorrectCountry());
+        return ResponseEntity.ok(message);
     }
+
 }
+

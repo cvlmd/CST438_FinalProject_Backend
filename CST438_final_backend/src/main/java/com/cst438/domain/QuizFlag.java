@@ -1,21 +1,29 @@
 package com.cst438.domain;
 
-
-import javax.persistence.*;
-
-@Entity
-@Table(name = "flags")
 public class QuizFlag {
+    private String name;
+    private String flagUrl; // URL to the flag image
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    // Constructor that matches the usage in FlagService
+    public QuizFlag(String name, String flagUrl) {
+        this.name = name;
+        this.flagUrl = flagUrl;
+    }
 
-    @Column(nullable = false)
-    private String country;
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
 
-    @Column(nullable = false)
-    private String imageUrl;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    // Assume more fields, standard getters and setters
+    public String getFlagUrl() {
+        return flagUrl;
+    }
+
+    public void setFlagUrl(String flagUrl) {
+        this.flagUrl = flagUrl;
+    }
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AttemptRepository extends JpaRepository<Attempt, Long> {
+public interface AttemptRepository extends JpaRepository<Attempt, String> {
     List<Attempt> findByUser(User user);
 }

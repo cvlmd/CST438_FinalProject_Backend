@@ -4,14 +4,14 @@ package com.cst438.dto;
 
 public class ScoreHistoryDTO {
 
-    private Long attemptId;
+    private String attemptId;
     private String userGuess;
     private String correctCountry;
     private boolean isCorrect;
-	public Long getAttemptId() {
+	public String getAttemptId() {
 		return attemptId;
 	}
-	public void setAttemptId(Long attemptId) {
+	public void setAttemptId(String attemptId) {
 		this.attemptId = attemptId;
 	}
 	public String getUserGuess() {
