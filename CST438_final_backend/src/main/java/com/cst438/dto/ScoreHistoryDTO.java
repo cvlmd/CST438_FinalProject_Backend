@@ -4,27 +4,34 @@ package com.cst438.dto;
 
 public class ScoreHistoryDTO {
 
-    private Long userId;
-    private Integer score;
-    private String quizDate; // Could also be a Date object
-	public Long getUserId() {
-		return userId;
+    private Long attemptId;
+    private String userGuess;
+    private String correctCountry;
+    private boolean isCorrect;
+	public Long getAttemptId() {
+		return attemptId;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setAttemptId(Long attemptId) {
+		this.attemptId = attemptId;
 	}
-	public Integer getScore() {
-		return score;
+	public String getUserGuess() {
+		return userGuess;
 	}
-	public void setScore(Integer score) {
-		this.score = score;
+	public void setUserGuess(String userGuess) {
+		this.userGuess = userGuess;
 	}
-	public String getQuizDate() {
-		return quizDate;
+	public String getCorrectCountry() {
+		return correctCountry;
 	}
-	public void setQuizDate(String quizDate) {
-		this.quizDate = quizDate;
+	public void setCorrectCountry(String correctCountry) {
+		this.correctCountry = correctCountry;
+	}
+	public boolean isCorrect() {
+		return isCorrect;
+	}
+	public void setCorrect(boolean isCorrect) {
+		this.isCorrect = isCorrect;
 	}
 
-    // Getters and setters
 }
+
